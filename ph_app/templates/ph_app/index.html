@@ -1,0 +1,748 @@
+{% extends "ph_app/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
+        <div id="hero-content" class="z-30 w-full flex flex-col items-center justify-center gap-y-7 mt-52">
+            <h1 class="text-white text-center font-bold text-6xl drop-shadow-2xl">Todas las playlists en un solo lugar</h1>
+            <p class=" text-white text-center font-light text-4xl px-4">Encuentra tu mood ideal, en el momento que quieras.</p>
+        
+            <div id="search-bar" class="relative p-8">
+                <div class="bg-white flex items-center rounded-full shadow-xl">
+                    <input class="rounded-l-full w-full py-4 px-6 text-gray-700 focus:outline-none" id="search" type="text" placeholder="Encuentra tu playlist ideal">
+                
+                <div class="p-4">
+                    <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+            <source src="{% static 'ph_app/images/hero-bg.mp4' %}" type="video/mp4" />
+            Sorry. Your browser does not support the video tag.
+        </video>
+
+    </header>
+
+    <section id="tags-row" class="w-1/2 relative z-30 flex flex-col items-center justify-center bg-white rounded-lg mx-auto shadow-xl md:flex-row md:h-40 mt-10 md:-mt-32 md:space-x-7">
+        
+        <div id="tag1" class="flex flex-col h-40 w-40 items-center justify-center transform transition duration-300 hover:scale-105">
+            <img src="{% static 'ph_app/images/happy.png' %}" alt="Happy Mood" class="h-20">
+            <p class="mt-5">Happy</p>
+        </div>
+        <div id="tag2" class="flex flex-col h-40 w-40 items-center justify-center transform transition duration-300 hover:scale-105">
+            <img src="{% static 'ph_app/images/meh.png' %}" alt="Happy Mood" class="h-20">
+            <p class="mt-5">Meh</p>
+        </div>
+        <div id="tag3" class="flex flex-col h-40 w-40 items-center justify-center transform transition duration-300 hover:scale-105">
+            <img src="{% static 'ph_app/images/dance.png' %}" alt="Happy Mood" class="h-20">
+            <p class="mt-5">¡A bailar!</p>
+        </div>
+        <div id="tag4" class="flex flex-col h-40 w-40 items-center justify-center transform transition duration-300 hover:scale-105">
+            <img src="{% static 'ph_app/images/rainy.png' %}" alt="Happy Mood" class="h-20">
+            <p class="mt-5">Rainy</p>
+        </div>
+        <div id="tag5" class="flex flex-col h-40 w-40 items-center justify-center transform transition duration-300 hover:scale-105">
+            <img src="{% static 'ph_app/images/winter.png' %}" alt="Happy Mood" class="h-20">
+            <p class="mt-5">Invernal</p>
+        </div>
+    </section>
+
+    <div id="liked-title" class="text-black font-bold text-3xl text-center mt-32">Las más likeadas</div>
+
+    <section id="most-liked" class="w-100 flex grid grid-cols-1 gap-y-7 items-center justify-center md:grid-cols-4 md:justify-around md:gap-10 mx-1 md:mx-36 mt-20">
+        
+        <div id="liked-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liked-card2" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"> <i class="fab fa-youtube text-red-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="liked-card3" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liked-card4" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liked-card5" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liked-card6" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liked-card7" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="liked-card8" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="more-button" class="flex flex-row items-center justify-center my-20">
+        <a href="#"><p class="rounded-full w-32 h-8 text-xl text-center text-white transform transition duration-200 hover:scale-105 hover:shadow-xl hover:bg-pink-600 bg-blue-400"> Ver más +</p></a> 
+    </div>
+
+    <section id="two-col" class="flex flex-col md:flex-row items-center justify-evenly w-full bg-black">
+        <div id="txt-intro">
+            <h1 id="intro-title" class="text-pink-600 text-4xl font-black mx-5 mt-10 text-center pb-12 md:text-left md:ml-36 md:pb-5">Lorem ipsum dolor sit amet consequat</h1>
+            <p class="text-white text-base mx-5 md:ml-36"> Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <br><br>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+            <br><br>
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        </div>
+
+        <img id="img-intro" src="{% static 'ph_app/images/music-girl.png' %}" class="w-screen md:h-screen"/>
+    </section>
+
+    <div id="newest-title" class="text-black font-bold text-3xl text-center mt-32">Nuevas</div>
+
+    <section id="new-plyst" class="w-100 flex grid grid-cols-1 gap-y-7 items-center justify-center md:w-100 md:grid-cols-4 md:justify-around md:gap-10 mx-1 md:ml-36 md:mr-36 mt-20">
+        
+        <div id="new-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="new-card2" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"> <i class="fab fa-youtube text-red-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="new-card3" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="new-card4" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="new-card5" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="new-card6" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="new-card7" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="new-card8" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="{% static 'ph_app/images/album2.png' %}" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="rankings" class="w-full h-4/5 my-32 bg-gradient-to-r from-pink-500 to-blue-400">
+        <div id="rankings-title" class="text-white font-bold text-3xl text-center mt-32 pt-20">Rankings</div>
+
+        <div id="ranks-row" class="w-100 flex grid grid-cols-1 gap-y-7 items-center justify-center md:grid-cols-3 md:justify-around md:gap-10 mt-20 mb-20 mx-1 md:ml-36 md:mr-36 ">
+            <div id="rank-col1" class="flex flex-col items-center justify-start divide-y divide-dotted divide-white">
+                <h1 class="font-bold text-center text-white mb-10"><i class="fas fa-bolt pr-3"></i>Las más bailables</h1>
+                <div id="ranker-1" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white">Nombre de playlist</p>
+                </div>
+                <div id="ranker-2" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-black text-white">Nombre de playlist</p>
+                </div>
+                <div id="ranker-3" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white">Nombre de playlist</p>
+                </div>
+                <div id="ranker-4" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white">Nombre de playlist</p>
+                </div>
+                <div id="ranker-5" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white">Nombre de playlist</p>
+                </div>
+            </div>
+
+            <div id="rank-col2" class="flex flex-col items-center justify-start justify-start divide-y divide-dotted divide-white">
+                <h1 class="font-bold text-white text-center mb-10"><i class="fas fa-spa pr-3"></i>Máximo zen</h1>
+                <div id="ranker-1" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-2" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-3" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-4" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-5" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+            </div>
+
+            <div id="rank-col3" class="flex flex-col items-center justify-start justify-start divide-y divide-dotted divide-white">
+                <h1 class="font-bold text-center text-white mb-10"><i class="fas fa-lightbulb pr-3"></i>Para concentrarte al 100</h1>
+                <div id="ranker-1" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-2" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-3" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-4" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+                <div id="ranker-5" class="w-auto flex flex-col md:flex-row items-center justify-start py-5 gap-x-7">
+                    <img id="rank-art" class="w-16 h-16 transition transform duration-250 hover:scale-105 hover:shadow-2xl" src="{% static 'ph_app/images/album1.png' %}">
+                    <p class="text-base text-white text-black">Nombre de playlist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="similar-listens" class="w-100 mx-2 my-10 md:mx-32 md:my-20">
+        <div id="similar-title" class="text-black font-bold text-3xl text-center mt-32 mb-20">Porque escuchaste...</div>
+
+        <div id="similar-leftart" class="flex flex-col items-center justify-start md:flex-row mt-10 gap-x-5 md:mt-40 md:gap-x-24">
+            <div id="similar-listened" class="w-7/12 md:w-1/5 flex flex-col">
+                <h1 id="similar-listened-title" class="font-semibold text-2xl mb-10">Playlist Oficial Happy</h1>
+                <img id="similar-listened-art" class="w-auto" src="{% static 'ph_app/images/album2.png' %}">
+            </div>
+
+            <div id="similar-recomms" class="grid grid-cols-2 md:grid-cols-8 mt-14 items-center justify-around gap-x-10 gap-y-16">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">
+                <img id="similar-listened-art" class="w-32 transition transform duration-250 hover:scale-105 hover:shadow-md transform transition duration-300 hover:opacity-75" src="{% static 'ph_app/images/album3.jpg' %}">            
+            </div>
+        </div>  
+    </section>
+{% endblock %}

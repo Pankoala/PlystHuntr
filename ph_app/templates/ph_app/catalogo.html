@@ -1,0 +1,383 @@
+{% extends "ph_app/base.html" %}
+{% load static %}
+
+{% block contenido %}
+    <section id="home-hero" class="relative flex items-center justify-center h-screen overflow-hidden md:mb-12">
+        <div id="hero-content" class="z-30 w-full flex flex-col items-center justify-center content-center gap-y-5 mt-10 mb20">
+            <div id="search-bar" class="relative p-8 flex flex-col justify-center">
+                <p class="text-white text-center font-light text-4xl px-3 py-3">Explora y encuentra</p>
+                <div class="bg-white flex items-center rounded-full shadow-xl">
+                    <input class="rounded-l-full w-full py-4 px-6 text-gray-700 focus:outline-none" id="search" type="text" placeholder="Buscar artista, canción, género, ...">
+                
+                <div class="p-4">
+                    <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <div id="categorias-title" class="text-black font-bold text-3xl text-center mt-32">Categorías</div>
+    <section>
+        <div class="flex overflow-auto">
+            <a href=""><p id="c1-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#indie</p></a>
+            <a href=""><p id="c2-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#chill</p></a>
+            <a href=""><p id="c3-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#electronic</p></a>
+            <a href=""><p id="c4-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rock</p></a>
+            <a href=""><p id="c5-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#love</p></a>
+            <a href=""><p id="c6-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#indie rock</p></a>
+            <a href=""><p id="c7-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#pop</p></a>
+            <a href=""><p id="c8-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#alternative</p></a>
+            <a href=""><p id="c9-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#happy</p></a>
+            <a href=""><p id="c10-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#alternative rock</p></a>
+            <a href=""><p id="c11-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#summer</p></a>
+            <a href=""><p id="c12-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sad</p></a>
+            <a href=""><p id="c13-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#hip hop</p></a>
+            <a href=""><p id="c14-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#study</p></a>
+            <a href=""><p id="c15-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#dance</p></a>
+            <a href=""><p id="c16-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#relax</p></a>
+            <a href=""><p id="c17-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#folk</p></a>
+            <a href=""><p id="c18-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#party</p></a>
+            <a href=""><p id="c19-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rap</p></a>
+            <a href=""><p id="c20-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#acoustic</p></a>
+            <a href=""><p id="c21-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sleep</p></a>
+            <a href=""><p id="c22-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#calm</p></a>
+            <a href=""><p id="c23-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#upbeat</p></a>
+            <a href=""><p id="c24-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#instrumental</p></a>
+            <a href=""><p id="c25-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#indie pop</p></a>
+            <a href=""><p id="c26-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#fan mix</p></a>
+            <a href=""><p id="c27-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#kpop</p></a>
+            <a href=""><p id="c28-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#soundtrack</p></a>
+            <a href=""><p id="c29-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#dubstep</p></a>
+            <a href=""><p id="c30-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#punk</p></a>
+            <a href=""><p id="c31-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#house</p></a>
+            <a href=""><p id="c32-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#fun</p></a>
+            <a href=""><p id="c33-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#jazz</p></a>
+            <a href=""><p id="c34-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#remix</p></a>
+            <a href=""><p id="c35-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#workout</p></a>
+            <a href=""><p id="c36-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#r&b</p></a>
+            <a href=""><p id="c37-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sex</p></a>
+            <a href=""><p id="c38-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#indie folk</p></a>
+            <a href=""><p id="c39-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#pop punk</p></a>
+            <a href=""><p id="c40-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#ambient</p></a>
+            <a href=""><p id="c41-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#slow</p></a>
+            <a href=""><p id="c42-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#classic rock</p></a>
+            <a href=""><p id="c43-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#feel good</p></a>
+            <a href=""><p id="c44-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#covers</p></a>
+            <a href=""><p id="c45-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#oldies</p></a>
+            <a href=""><p id="c46-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#country</p></a>
+            <a href=""><p id="c47-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#soul</p></a>
+            <a href=""><p id="c48-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#edm</p></a>
+            <a href=""><p id="c49-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#dark</p></a>
+            <a href=""><p id="c50-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#trap</p></a>
+            <a href=""><p id="c51-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#electro</p></a>
+            <a href=""><p id="c52-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#blues</p></a>
+            <a href=""><p id="c53-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#mellow</p></a>
+            <a href=""><p id="c54-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#smoke</p></a>
+            <a href=""><p id="c55-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#classical</p></a>
+            <a href=""><p id="c56-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#metal</p></a>
+            <a href=""><p id="c57-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#winter</p></a>
+            <a href=""><p id="c58-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#weed</p></a>
+            <a href=""><p id="c59-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#korean</p></a>
+            <a href=""><p id="c60-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#christmas</p></a>
+            <a href=""><p id="c61-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#nigth</p></a>
+            <a href=""><p id="c62-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#90s</p></a>
+            <a href=""><p id="c63-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#chillwave</p></a>
+            <a href=""><p id="c64-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#writing</p></a>
+            <a href=""><p id="c65-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#cute</p></a>
+            <a href=""><p id="c66-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#morning</p></a>
+            <a href=""><p id="c67-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#80s</p></a>
+            <a href=""><p id="c68-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#piano</p></a>
+            <a href=""><p id="c69-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#love songs</p></a>
+            <a href=""><p id="c70-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#deep house</p></a>
+            <a href=""><p id="c71-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#punk rock</p></a>
+            <a href=""><p id="c72-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#alterantive/indie</p></a>
+            <a href=""><p id="c73-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#breakup</p></a>
+            <a href=""><p id="c74-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#indie electronic</p></a>
+            <a href=""><p id="c75-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#random</p></a>
+            <a href=""><p id="c76-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#bass</p></a>
+            <a href=""><p id="c77-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#driving</p></a>
+            <a href=""><p id="c78-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#soft</p></a>
+            <a href=""><p id="c79-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#autumn</p></a>
+            <a href=""><p id="c80-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#experimental</p></a>
+            <a href=""><p id="c81-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#personal</p></a>
+            <a href=""><p id="c82-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#reggae</p></a>
+            <a href=""><p id="c83-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#oc</p></a>
+            <a href=""><p id="c84-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rap & hip hop</p></a>
+            <a href=""><p id="c85-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#lo-fi</p></a>
+            <a href=""><p id="c86-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#hearbreak</p></a>
+            <a href=""><p id="c87-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#road trip</p></a>
+            <a href=""><p id="c88-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#funk</p></a>
+            <a href=""><p id="c89-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#singer/songwriter</p></a>
+            <a href=""><p id="c90-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#fall</p></a>
+            <a href=""><p id="c91-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#anime</p></a>
+            <a href=""><p id="c92-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#5sos</p></a>
+            <a href=""><p id="c93-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#halloween</p></a>
+            <a href=""><p id="c94-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#eclectic</p></a>
+            <a href=""><p id="c95-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#beach</p></a>
+            <a href=""><p id="c96-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#psychedelic</p></a>
+            <a href=""><p id="c97-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#relaxing</p></a>
+            <a href=""><p id="c98-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#good vibes</p></a>
+            <a href=""><p id="c99-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#high</p></a>
+            <a href=""><p id="c100-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#downtempo</p></a>
+            <a href=""><p id="c101-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sexy</p></a>
+            <a href=""><p id="c102-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#female volcalists</p></a>
+            <a href=""><p id="c103-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#new</p></a>
+            <a href=""><p id="c104-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#girl power</p></a>
+            <a href=""><p id="c105-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#techno</p></a>
+            <a href=""><p id="c106-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#mix</p></a>
+            <a href=""><p id="c107-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#seasy listening</p></a>
+            <a href=""><p id="c108-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rain</p></a>
+            <a href=""><p id="c109-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#melancholy</p></a>
+            <a href=""><p id="c110-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#beats</p></a>
+            <a href=""><p id="c111-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#nostalgia</p></a>
+            <a href=""><p id="c112-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#motivation</p></a>
+            <a href=""><p id="c113-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#shoegaze</p></a>
+            <a href=""><p id="c114-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#throwback</p></a>
+            <a href=""><p id="c115-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#japanese</p></a>
+            <a href=""><p id="c116-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#spring</p></a>
+            <a href=""><p id="c117-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#crush</p></a>
+            <a href=""><p id="c118-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#music</p></a>
+            <a href=""><p id="c119-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#original character</p></a>
+            <a href=""><p id="c120-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#girls</p></a>
+            <a href=""><p id="c121-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#running</p></a>
+            <a href=""><p id="c122-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#chillstep</p></a>
+            <a href=""><p id="c123-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#depressed</p></a>
+            <a href=""><p id="c241-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#mashup</p></a>
+            <a href=""><p id="c125-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#dream pop</p></a>
+            <a href=""><p id="c126-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#harry styles</p></a>
+            <a href=""><p id="c127-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#supernatural</p></a>
+            <a href=""><p id="c128-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#dreamy</p></a>
+            <a href=""><p id="c129-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#lonely</p></a>
+            <a href=""><p id="c130-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#quiet</p></a>
+            <a href=""><p id="c131-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#teen wolf</p></a>
+            <a href=""><p id="c132-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#new wave</p></a>
+            <a href=""><p id="c133-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#romance</p></a>
+            <a href=""><p id="c134-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#synthpop</p></a>
+            <a href=""><p id="c135-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#cry</p></a>
+            <a href=""><p id="c136-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#60s</p></a>
+            <a href=""><p id="c137-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#homestuck</p></a>
+            <a href=""><p id="c138-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sleepy</p></a>
+            <a href=""><p id="c139-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#hipster</p></a>
+            <a href=""><p id="c140-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#70s</p></a>
+            <a href=""><p id="c141-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#hardocore</p></a>
+            <a href=""><p id="c142-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#world</p></a>
+            <a href=""><p id="c143-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#tri-hop</p></a>
+            <a href=""><p id="c144-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#travel</p></a>
+            <a href=""><p id="c145-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#mixtape</p></a>
+            <a href=""><p id="c146-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#oc mix</p></a>
+            <a href=""><p id="c147-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#studying</p></a>
+            <a href=""><p id="c148-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#friends</p></a>
+            <a href=""><p id="c149-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#marvel</p></a>
+            <a href=""><p id="c150-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#trance</p></a>
+            <a href=""><p id="c151-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#folk rock</p></a>
+            <a href=""><p id="c152-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#dance party</p></a>
+            <a href=""><p id="c153-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#angst</p></a>
+            <a href=""><p id="c154-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#depression</p></a>
+            <a href=""><p id="c155-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rnb</p></a>
+            <a href=""><p id="c156-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#space</p></a>
+            <a href=""><p id="c157-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#disney</p></a>
+            <a href=""><p id="c158-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#badass</p></a>
+            <a href=""><p id="c159-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#romantic</p></a>
+            <a href=""><p id="c160-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#emo</p></a>
+            <a href=""><p id="c161-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rainy day</p></a>
+            <a href=""><p id="c162-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#pump up</p></a>
+            <a href=""><p id="c163-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#angry</p></a>
+            <a href=""><p id="c164-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#chill out</p></a>
+            <a href=""><p id="c165-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#roadtrip</p></a>
+            <a href=""><p id="c166-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#favorites</p></a>
+            <a href=""><p id="c167-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#2000s</p></a>
+            <a href=""><p id="c168-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#post-punk</p></a>
+            <a href=""><p id="c169-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#post-rock</p></a>
+            <a href=""><p id="c170-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#holiday</p></a>
+            <a href=""><p id="c171-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#college</p></a>
+            <a href=""><p id="c172-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#jpop</p></a>
+            <a href=""><p id="c173-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#hard rock</p></a>
+            <a href=""><p id="c174-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#grunge</p></a>
+            <a href=""><p id="c175-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#garage</p></a>
+            <a href=""><p id="c176-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#harry potter</p></a>
+            <a href=""><p id="c177-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#friendship</p></a>
+            <a href=""><p id="c178-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#french</p></a>
+            <a href=""><p id="c179-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#cool</p></a>
+            <a href=""><p id="c180-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#rp</p></a>
+            <a href=""><p id="c181-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#epic</p></a>
+            <a href=""><p id="c182-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#disco</p></a>
+            <a href=""><p id="c183-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#halsey</p></a>
+            <a href=""><p id="c184-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#drinking</p></a>
+            <a href=""><p id="c185-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#underground</p></a>
+            <a href=""><p id="c186-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sadness</p></a>
+            <a href=""><p id="c187-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#reading</p></a>
+            <a href=""><p id="c188-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#pregame</p></a>
+            <a href=""><p id="c189-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#guitar</p></a>
+            <a href=""><p id="c190-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#latin</p></a>
+            <a href=""><p id="c191-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#gym</p></a>
+            <a href=""><p id="c192-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#sweet</p></a>
+            <a href=""><p id="c193-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#old school</p></a>
+            <a href=""><p id="c194-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#lounge</p></a>
+            <a href=""><p id="c195-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#girl groups</p></a>
+        </div>
+    </section>
+
+    <!-- Populares -->
+    <div id="populares-title" class="text-black font-bold text-3xl text-center mt-32">Populares</div>
+    <section id="most-liked" class="w-100 flex grid grid-cols-1 gap-y-7 items-center justify-center md:grid-cols-4 md:justify-around md:gap-10 mx-1 md:mx-36 mt-18">
+        
+        <div id="populares-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="https://images.unsplash.com/photo-1525268771113-32d9e9021a97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="populares-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="https://images.unsplash.com/photo-1525268771113-32d9e9021a97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="populares-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="https://images.unsplash.com/photo-1525268771113-32d9e9021a97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="populares-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
+            <div id="plyst-data">
+                <div id="tags-cloud" class="flex flex-row items-center justify-around">
+                    <a href="#"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Happy</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#Abailar</p></a>
+                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#QuieroFiesta</p></a>
+                    <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
+                </div>
+
+                <a href="#"><h1 id="plyst-name" class="text-3x1 mt-2 ml-4 font-bold text-gray-800 hover:text-purple-500 transition duration-250">PLAYLIST HAPPY OFICIAL</h1></a>
+            
+                <div id="plyst-metadata" class="flex flex-row justify-between">
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">25 canciones</p>
+                    <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
+                </div>
+            </div>
+
+            <a href="#"><img id="plyst-art" src="https://images.unsplash.com/photo-1525268771113-32d9e9021a97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full transform transition duration-300 hover:opacity-75"></a>
+
+            <div id="social" class="flex p-4 justify-between">
+                <div id="user" class="flex flex-row items-center gap-x-4">
+                    <a href="#">
+                    <img id="user-pic" src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" class="w-7 rounded-full">
+                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">Username</h2>
+                    </a>
+                </div>
+
+                <div id="social-nums" class="flex space-x-2">
+                    <p><i class="fas fa-heart text-red-400 pr-2"></i>42</p>
+                    <p><i class="fas fa-comment-alt text-blue-400 pr-2"></i></i>42</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Reproduccion aleatoria -->
+    <div id="populares-title" class="text-black font-bold text-3xl text-center mt-32 md-40">Aleatorio</div>
+    <section>
+        <div id="aleatorio-button" class="flex flex-row items-center justify-center mb-40">
+            <a href="#"><p class="flex flex-col items-center rounded-full w-40 h-8 text-xl text-white bg-blue-500 transform transition duration-200 hover:scale-105 hover:shadow-xl hover:bg-purple-500"> Reproducir </p></a> 
+            <div class="p-4">
+                <button class="flex items-center justify-center rounded-full p-2 w-12 h-12 text-white bg-blue-500 transform transition duration-200 hover:scale-105 hover:shadow-xl hover:bg-purple-500">
+                    <ion-icon name="play-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
