@@ -30,12 +30,12 @@ class Playlister(models.Model):
         return self.user.username
 
 
-class PlaylisterPlaylist(models.Model):
-    """ Define la tabla Playlister Playlist"""
-    nombreplaylist = models.CharField(max_length=145)
+class Playlist(models.Model):
+    """ Define la tabla Playlist"""
+    nombre = models.CharField(max_length=145)
     playlister = models.ForeignKey(Playlister, on_delete=models.CASCADE)
     descripcion = models.CharField(max_length=256)
-    canciones = models.FloatField(default=0.0)
+    canciones = models.IntegerField(default=0)
     MOOD = [
         ("Hap", "Happy"),
         ("Chi", "Chill"),
@@ -47,12 +47,11 @@ class PlaylisterPlaylist(models.Model):
         ("DZ", "Deezer"),
         ("SP", "Spotify"),
         ("TD", "Tidal"),
-        ("YT", "Youtube Music"),
     ]
     plataforma = models.CharField(max_length=2, choices=PLATAFORMA, null=True, blank=True)  # VARCHAR(2)
     link = models.CharField(max_length=100)
 
 
     def __str__(self):
-        return str(self.nombreplaylist)
+        return str(self.nombre)
 

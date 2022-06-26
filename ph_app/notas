@@ -1,0 +1,17 @@
+User
+Playlister
+Playlist
+
+User 1 1 Playlister
+Playlister 0-* 1-1 Playlist
+
+YOUTUBE:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VTUgZ3-Ovws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+SPOTIFY:
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0BmZLStVjbewq0nW3pLVFR?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+https://i.scdn.co/image/ab67706c0000bebb4cb5f399cdbec9e741ae36ec * 90S
+https://open.spotify.com/playlist/1JOG4tofxY4V7YObkt5aYA?si=bee948a347d24066
+
+https://i.scdn.co/image/ab67706c0000bebb99f59a286760057eed14676c * SATURNO
