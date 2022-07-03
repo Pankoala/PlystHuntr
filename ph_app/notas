@@ -15,3 +15,47 @@ https://i.scdn.co/image/ab67706c0000bebb4cb5f399cdbec9e741ae36ec * 90S
 https://open.spotify.com/playlist/1JOG4tofxY4V7YObkt5aYA?si=bee948a347d24066
 
 https://i.scdn.co/image/ab67706c0000bebb99f59a286760057eed14676c * SATURNO
+
+DEEZER:
+
+<iframe title="deezer-widget" src="https://widget.deezer.com/widget/dark/playlist/7560269622" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+
+https://deezer.page.link/TVRReZCLrQHLKmra6
+
+TIDAL:
+
+<div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="https://embed.tidal.com/playlists/e9d96c96-7b5d-48e3-8e4c-0448ad084c12?layout=gridify" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
+
+https://tidal.com/browse/playlist/e9d96c96-7b5d-48e3-8e4c-0448ad084c12
+
+https://tidal.com/browse/playlist/e9d96c96-7b5d-48e3-8e4c-0448ad084c12
+
+######################## CODIGO DE PLAYLISTS #####################################
+
+    {% if playlist.plataforma == "SP" %}
+    <section>
+        <img src="{{ url_image }}">
+        <iframe style="border-radius:12px" src="{{ url_playlist }}"?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </section>
+
+
+    {% elif playlist.plataforma == "DZ" %}
+    <section>
+        <img src="{{ url_image }}">
+        <iframe title="deezer-widget" src="{{ url_playlist }}" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+    </section>
+
+
+    {% elif playlist.plataforma == "TD" %}
+    <section>
+        <div style="position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%;"><iframe src="{{ url_playlist }}" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 1px; min-height: 100%; margin: 0 auto;"></iframe></div>
+    </section>
+    {% endif %}
+
+
+
+
+
+    PAISESSSS////////////////////////////////////////////
+
+            

@@ -2,13 +2,11 @@
 {% load static %}
 
 {% block contenido %}
-    <section id="home-hero" class="relative flex items-center justify-center h-screen overflow-hidden md:mb-12">
-        <div id="hero-content" class="z-30 w-full flex flex-col items-center justify-center content-center gap-y-5 mt-10 mb20">
-            <div id="search-bar" class="relative p-8 flex flex-col justify-center">
-                <p class="text-white text-center font-light text-4xl px-3 py-3">Explora y encuentra</p>
+    <section id="search-hero" class="flex items-center justify-center md:h-96">
+            <div id="search-bar" class="relative flex flex-col items-center justify-center">
+                <p class="text-black text-center font-light text-4xl px-3 py-3 md:mt-10">Explora y encuentra</p>
                 <div class="bg-white flex items-center rounded-full shadow-xl">
                     <input class="rounded-l-full w-full py-4 px-6 text-gray-700 focus:outline-none" id="search" type="text" placeholder="Buscar artista, canción, género, ...">
-                
                 <div class="p-4">
                     <button class="bg-blue-500 text-white rounded-full p-2 hover:bg-blue-400 focus:outline-none w-12 h-12 flex items-center justify-center">
                         <i class="fas fa-search"></i>
@@ -16,29 +14,10 @@
                 </div>
                 </div>
             </div>
-        </div>
     </section>
-
-    {% if playlist.plataforma == "SP" %}
-    <section>
-        <img src="{{ url_image }}">
-        <iframe style="border-radius:12px" src="{{ url_playlist }}"?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    </section>
-    {% elif playlist.plataforma == "DZ" %}
-
-    <section>
-        DEEZER
-    </section>
-
-    {% elif playlist.plataforma == "TD" %}
-    
-    <section>
-        TIDAL
-    </section>
-    {% endif %}
 
     <!-- Categorias -->
-    <div id="categorias-title" class="text-black font-bold text-3xl text-center mt-32">Categorías</div>
+    <div id="categorias-title" class="text-black font-bold text-3xl text-center">Categorías</div>
     <section>
         <div class="flex overflow-auto">
             <a href=""><p id="c1-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">#indie</p></a>
