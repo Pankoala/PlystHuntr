@@ -93,12 +93,19 @@
                 {% elif t.plataforma == "TD" %}
                 <a href="/playlist/"><img id="plyst-art" src="{{ url_image }}" class="w-full transform transition duration-300 hover:opacity-75"></a>
                 {% endif %}
+            
+            <div id="pl-name" class="flex p-4 justify-center items-center">
+                <a href="/playlist/">
+                    <p id="username" class="text-gray-800 font-bold text-center transition transform duration-100 hover:text-pink-600">{{ t.nombre }}</h2>
+                </a>
+
+            </div>
 
             <div id="social" class="flex p-4 justify-between">
                 <div id="user" class="flex flex-row items-center gap-x-4">
                     <a href="#">
                     <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
-                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">{{ t.playlister }}</h2>
+                    <p id="username" class="text-gray-800 font-semibol transition transform duration-100 hover:text-pink-600">{{ t.playlister }}</h2>
                     </a>
                 </div>
 

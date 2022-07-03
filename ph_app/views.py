@@ -57,7 +57,7 @@ def subirpl(request):
 
 def playlist(request):
    """ Vista o función que atiende la url GET /playlist/"""
-   playlist = Playlist.objects.get(nombre = "Tik Toks Latinos")
+   playlist = Playlist.objects.get(nombre = "Saturn Waves")
    url_image = ""
    if playlist.plataforma == "SP":
       html = requests.get(playlist.link).text
