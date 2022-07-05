@@ -1,5 +1,8 @@
+from bs4 import BeautifulSoup
 from django.db import models
 from django.contrib.auth.models import User
+
+import requests
 
 
 # Django ya cuenta con una tabla de Usuario llamada User
@@ -266,10 +269,9 @@ class Playlist(models.Model):
         ("Romantic", "Romantic"),
         ("Blue", "Blue"),
     ]
-    mood = models.CharField(max_length=40, choices=MOOD, null=True, blank=True)  # VARCHAR(2)
+    mood = models.CharField(max_length=20, choices=MOOD, null=True, blank=True)  # VARCHAR(2)
     tag1 = models.CharField(max_length=256, null=True, blank=True)
     tag2 = models.CharField(max_length=256, null=True, blank=True)
-    tag3 = models.CharField(max_length=256, null=True, blank=True)
     PLATAFORMA = [
         ("DZ", "Deezer"),
         ("SP", "Spotify"),
@@ -277,8 +279,48 @@ class Playlist(models.Model):
     ]
     plataforma = models.CharField(max_length=2, choices=PLATAFORMA, null=True, blank=True)  # VARCHAR(2)
     link = models.CharField(max_length=100)
+    url_cover = models.CharField(max_length=500)
 
 
     def __str__(self):
         return str(self.nombre)
+        
+    @property
+    def url_cover(self):
+        """ Obtiene la url de la portada de la playlist"""
+        url_image = ""
+        if self.plataforma == "SP":
+            html = requests.get(self.link).text
+            soup = BeautifulSoup(html, 'html.parser')
+            meta = soup.find(property = "og:image")
+            url_image = meta.attrs["content"]
 
+        elif self.plataforma == "DZ":
+            html = requests.get(self.link).text
+            soup = BeautifulSoup(html, 'html.parser')
+            meta = soup.find(property = "og:image")
+            url_image = meta.attrs["content"]
+        
+        return url_image
+
+    @property
+    def url_playlist(self):
+        """ Obtiene la url de la playlist"""
+        url = ""
+        if self.plataforma == "SP":
+            id_spotify = self.link.split("?")[0].split("/")[-1]
+            url = f"https://open.spotify.com/embed/playlist/{id_spotify}"
+
+        elif self.plataforma == "DZ":
+            html = requests.get(self.link).text
+            soup = BeautifulSoup(html, 'html.parser')
+            og_deezer = soup.find(property = "og:url")
+            url_deezer = og_deezer.attrs["content"]
+            id_deezer = url_deezer.split("/")[-1]
+            url = f"https://widget.deezer.com/widget/dark/playlist/{id_deezer}"
+
+        elif self.plataforma == "TD":
+            id_spotify = self.link.split("/")[-1]
+            url = f"https://embed.tidal.com/playlists/{id_spotify}?layout=gridify"
+
+        return url
