@@ -13,6 +13,7 @@ cssselect==1.1.0
 decorator==5.1.1
 Django==4.0.5
 django-countries==7.3.2
+djangorestframework==3.13.1
 executing==0.8.3
 fake-useragent @ file:///home/conda/feedstock_root/build_artifacts/fake-useragent_1624623039956/work
 idna @ file:///tmp/build/80754af9/idna_1637925883363/work
@@ -33,6 +34,7 @@ pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
 pyppeteer @ file:///home/conda/feedstock_root/build_artifacts/pyppeteer_1643233645996/work
 pyquery @ file:///home/conda/feedstock_root/build_artifacts/pyquery_1606451286280/work
 PySocks @ file:///C:/ci_310/pysocks_1642089375450/work
+pytz==2022.1
 pyuca==1.2
 requests @ file:///C:/ci/requests_1656443888572/work
 requests-html @ file:///home/conda/feedstock_root/build_artifacts/requests-html_1624699576190/work

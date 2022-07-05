@@ -3,10 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from rest_framework import viewsets
+
 from requests_html import HTMLSession
 import requests
 
 from .models import Playlister, Playlist
+# from .serializers import UserSerializer
 
 # Create your views here.
 def index(request):
@@ -22,7 +25,13 @@ def index(request):
 
 def catalogo(request):
    """ Vista para atender la petición de la url /catálogo/ """
-   return render(request, "ph_app/catalogo.html")
+   playlists = Playlist.objects.all()
+
+   context = {
+      "playlists": playlists,
+   }
+
+   return render(request, "ph_app/catalogo.html", context)
 
 
 def playlist(request):
@@ -64,10 +73,6 @@ def playlist_add(request):
        return render(request, "ph_app/playlist_add.html")
 
 
-# def login(request):
-#     """ Vista o función que atiende la url GET /login/ """
-#     return render(request, "ph_app/login.html")
-
 def login_usuario(request):
     """Vista o función que atiende la url GET /login/"""
     if request.method == 'POST':
@@ -89,16 +94,26 @@ def login_usuario(request):
 
     return render(request, 'ph_app/login.html', {"msg": msg})
 
+def register_usuario(request):
+   """ Vista para atender la petición de la url /register/ """
+   return render(request, "ph_app/register.html")
+
+# # Vistas basadas en clases para Django Rest
+# class UserViewSet(viewsets.ModelViewSet):
+#    """API que permite realizar operaciones a la tabal User"""
+#    queryset = User.objects.all().order_by('id')
+#    serializer_class = UserSerializer
+
+
+# def login(request):
+#     """ Vista o función que atiende la url GET /login/ """
+#     return render(request, "ph_app/login.html")
+
 # def logout_usuario(request):
 #     """Vista o función que atiende la url GET /logout"""
 #     logout(request)
 
 #     return redirect("/")
-
-def register_usuario(request):
-   """ Vista para atender la petición de la url /register/ """
-   return render(request, "ph_app/register.html")
-
 
    #  """Vista o función que atiende la url GET /login/"""
    #  if request.method == 'POST':

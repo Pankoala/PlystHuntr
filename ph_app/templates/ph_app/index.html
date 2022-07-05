@@ -131,19 +131,19 @@
 
     <section id="mas-faved" class="w-100 flex grid grid-cols-1 gap-y-7 items-center justify-center md:w-100 md:grid-cols-4 md:justify-around md:gap-10 mx-1 md:ml-36 md:mr-36 mt-20">
 
-        {% for t in playlists %}
+        {% for pl in playlists %}
         <div id="liked-card1" class="bg-white container rounded-x1 shadow-1g hover:shadow-xl">
             <div id="plyst-data">
                 <div id="tags-cloud" class="flex flex-row items-center justify-around">
-                    <a href="/playlist/"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">{{ t.mood }}</p></a>
-                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">{{ t.tag1 }}</p></a>
-                    <a href="#"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">{{ t.tag2 }}</p></a>
+                    <a href="/playlist/mood/{{ pl.mood }}"><p id="main-tag" class="text-white text-xs font-bold rounded-full bg-pink-600 inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105 hover:bg-purple-500">{{ pl.mood }}</p></a>
+                    <a href="/playlist/mood/{{ pl.tag1 }}""><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">{{ pl.tag1 }}</p></a>
+                    <a href="/playlist/mood/{{ pl.tag2 }}"><p id="second-tag" class="text-white text-xs font-bold rounded-full inline-block mt-4 ml-4 py-1.5 px-4 bg-gray-300 transform transition duration-300 hover:scale-105 hover:bg-purple-500">{{ pl.tag2 }}</p></a>
                     
-                    {% if t.plataforma == "SP" %}
+                    {% if pl.plataforma == "SP" %}
                     <a href="#"><i class="fab fa-spotify text-green-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
-                    {% elif t.plataforma == "DZ" %}
+                    {% elif pl.plataforma == "DZ" %}
                     <a href="#"><i class="fab fa-deezer text-red-400 text-2xl font-bold inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"></i></a>
-                    {% elif t.plataforma == "TD" %}
+                    {% elif pl.plataforma == "TD" %}
                     <a href="#" class="text-2xl inline-block mt-4 ml-4 py-1.5 px-4 transform transition duration-300 hover:scale-105"">
                         <?xml version="1.0" ?><svg wdith="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M12.012 3.992L8.008 7.996 4.004 3.992 0 7.996 4.004 12l4.004-4.004L12.012 12l-4.004 4.004 4.004 4.004 4.004-4.004L12.012 12l4.004-4.004-4.004-4.004zM16.042 7.996l3.979-3.979L24 7.996l-3.979 3.979z"/></svg>
                     </a>
@@ -152,29 +152,25 @@
 
             
                 <div id="plyst-metadata" class="flex flex-row justify-between">
-                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">{{ t.canciones }} canciones</p>
+                    <p id="songs" class="mx-4 mt-1 mb-2 text-sm text-gray-400">{{ pl.canciones }} canciones</p>
                     <p id="duration" class="mx-4 mt-1 mb-2 text-sm text-gray-400">Duración: 1 hr 30 min</p>
                 </div>
             </div>
 
+                <a href="/playlist/{{ pl.id }}/"><img id="plyst-art" src="{{ pl.url_cover }}" class="w-full transform transition duration-300 hover:opacity-75"></a>
             
-            {% if playlist.plataforma == "SP" %}
-            <a href="/playlist/"><img id="plyst-art" src="{{ url_image }}" class="w-full transform transition duration-300 hover:opacity-75"></a>
-        
-        
-            {% elif playlist.plataforma == "DZ" %}
-            <a href="/playlist/"><img id="plyst-art" src="{{ url_image }}" class="w-full transform transition duration-300 hover:opacity-75"></a>
-        
-        
-            {% elif playlist.plataforma == "TD" %}
-            <a href="/playlist/"><img id="plyst-art" src="{{ url_image }}" class="w-full transform transition duration-300 hover:opacity-75"></a>
-            {% endif %}
+            <div id="pl-name" class="flex p-4 justify-center items-center">
+                <a href="/playlist/{{ pl.id }}/">
+                    <p id="username" class="text-gray-800 font-bold text-center transition transform duration-100 hover:text-pink-600">{{ pl.nombre }}</h2>
+                </a>
+
+            </div>
 
             <div id="social" class="flex p-4 justify-between">
                 <div id="user" class="flex flex-row items-center gap-x-4">
                     <a href="#">
                     <img id="user-pic" src="{% static 'ph_app/images/avatar.jpg' %}" class="w-7 rounded-full">
-                    <p id="username" class="text-gray-800 font-bold transition transform duration-100 hover:text-green-50">{{ t.playlister }}</h2>
+                    <p id="username" class="text-gray-800 font-semibol transition transform duration-100 hover:text-pink-600">{{ pl.playlister }}</h2>
                     </a>
                 </div>
 
@@ -187,7 +183,6 @@
         </div>
 
             {% endfor %}
-
 
     </section>
 
