@@ -58,6 +58,7 @@ def playlist_add(request):
       descripcion = request.POST["descripcion"]   
 
       nueva_playlist = Playlist(
+         playlister=Playlister.objects.get(user=request.user),
          nombre=nombre,
          plataforma=plataforma,
          link=link,
